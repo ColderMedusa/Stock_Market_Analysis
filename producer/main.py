@@ -1,5 +1,5 @@
-from extraction import connect_to_api, extract_json # pyright: ignore[reportMissingImports]
-from producer.producer_setup import kafka_producer, topic
+from extract import connect_to_api, extract_json # pyright: ignore[reportMissingImports]
+from producer_setup import kafka_producer, topic
 import time
 
 def main():

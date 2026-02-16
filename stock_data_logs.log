@@ -1,0 +1,4 @@
+2026-02-16 15:20:46,507 - ERROR - Error on stock: 401 Client Error: Unauthorized for url: https://alpha-vantage.p.rapidapi.com/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&outputsize=compact&interval=5min&datatype=json
+2026-02-16 15:20:46,521 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connecting> [IPv6 ('::1', 9094, 0, 0)]>: connecting to localhost:9094 [('::1', 9094, 0, 0) IPv6]
+2026-02-16 15:24:44,075 - ERROR - Error on stock: 401 Client Error: Unauthorized for url: https://alpha-vantage.p.rapidapi.com/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&outputsize=compact&interval=5min&datatype=json
+2026-02-16 15:24:44,081 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connecting> [IPv6 ('::1', 9094, 0, 0)]>: connecting to localhost:9094 [('::1', 9094, 0, 0) IPv6]
