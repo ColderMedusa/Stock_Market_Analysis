@@ -5,6 +5,7 @@ volumes:
     pgdata:
     pgadmin_data: 
     grafana_storage: # Volume for Grafana data persistence
+    ivy_cache: # Volume for Ivy cache (Maven dependencies)
     
 networks:
     stock_data: # Custom network for Kafka and UI communication
@@ -131,22 +132,22 @@ services:
         networks:
           - stock_data                          # Attach to same network so it can communicate with the master
 
-        consumer:
-              build:
-                context: ./consumer # Build the consumer image from the Dockerfile in the ./consumer directory
-                dockerfile: Dockerfile
-                image: stream_consumer
-                container_name: consumer          # Assign a name for the streaming job container
-                depends_on:
-                  - spark-master
-                  - kafka                  # Wait for Kafka and Spark to be online before starting job
-                env_file: .env
-                restart: unless-stopped
-                volumes:
-                  - ivy_cache:/opt/spark/work-dir/.ivy2
-                  - ./consumer:/opt/spark/work-dir/apps
-                networks:
-                  - stock_data  
+    consumer:
+      build:
+        context: ./consumer
+        dockerfile: Dockerfile
+      image: stream_consumer
+      container_name: consumer
+      depends_on:
+        - spark-master
+        - kafka
+      env_file: .env
+      restart: unless-stopped
+      volumes:
+        - ivy_cache:/opt/spark/work-dir/.ivy2
+        - ./consumer:/opt/spark/work-dir/apps
+      networks:
+        - stock_data          
 
 
 #services:
@@ -176,4 +177,4 @@ services:
           - pgadmin_data:/var/lib/pgadmin
 ## volumes:
 # #    pgdata:
-#  #   pgadmin_data:   
+#  #   pgadmin_data:
