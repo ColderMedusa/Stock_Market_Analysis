@@ -15,9 +15,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-BASEURL = "alpha-vantage.p.rapidapi.com"
+BASEURL = "alpha-vantage.p.rapidapi.com" # URL for the Alpha Vantage API on RapidAPI to extract the data from the API and send it to the Kafka topic.
 
-url = f"https://{BASEURL}/query"
+url = f"https://{BASEURL}/query" 
 
 api_key = os.getenv('API_KEY')
 
