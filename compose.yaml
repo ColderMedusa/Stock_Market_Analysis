@@ -69,8 +69,10 @@ services:
       environment:
         # increases the log level from info to debug
         - GF_LOG_LEVEL=debug
-        #- GF_SECURITY_ADMIN_PASSWORD=admin
-        - GF_AUTH_ANONYMOUS_ENABLED=true
+        - GF_SECURITY_ADMIN_USER=admin
+        - GF_SECURITY_ADMIN_PASSWORD=passwordS
+        - GF_AUTH_BASIC_ENABLED=true
+        #- GF_AUTH_ANONYMOUS_ENABLED=true
       ports:
         - '3000:3000'
       volumes:

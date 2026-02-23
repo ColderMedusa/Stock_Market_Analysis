@@ -13,3 +13,11 @@
 2026-02-19 21:26:35,364 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connected> [IPv4 ('127.0.0.1', 9094)]>: Connection complete.
 2026-02-19 21:26:35,385 - INFO - <KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 4294967.0 secs timeout.
 2026-02-19 21:26:35,443 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connected> [IPv4 ('127.0.0.1', 9094)]>: Closing connection. 
+2026-02-23 14:31:17,103 - ERROR - Error on stock: 401 Client Error: Unauthorized for url: https://alpha-vantage.p.rapidapi.com/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&outputsize=compact&interval=5min&datatype=json
+2026-02-23 14:31:17,116 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connecting> [IPv6 ('::1', 9094, 0, 0)]>: connecting to localhost:9094 [('::1', 9094, 0, 0) IPv6]
+2026-02-23 14:31:17,228 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <checking_api_versions_recv> [IPv6 ('::1', 9094, 0, 0)]>: Broker version identified as 2.6
+2026-02-23 14:31:17,228 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connected> [IPv6 ('::1', 9094, 0, 0)]>: Connection complete.
+2026-02-23 14:31:17,232 - INFO - <KafkaProducer client_id=kafka-python-producer-1 transactional_id=None>: Closing the Kafka producer with 4294967.0 secs timeout.
+2026-02-23 14:31:17,300 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connected> [IPv6 ('::1', 9094, 0, 0)]>: Closing connection. 
+2026-02-23 23:11:42,333 - ERROR - Error on stock: 401 Client Error: Unauthorized for url: https://alpha-vantage.p.rapidapi.com/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&outputsize=compact&interval=5min&datatype=json
+2026-02-23 23:11:42,345 - INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=localhost:9094 <connecting> [IPv6 ('::1', 9094, 0, 0)]>: connecting to localhost:9094 [('::1', 9094, 0, 0) IPv6]

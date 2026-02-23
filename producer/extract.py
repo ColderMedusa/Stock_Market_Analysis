@@ -7,10 +7,10 @@ def connect_to_api():
 
   json_response = []
 
-  for stock in range(0, len(stocks)):
-
+  for stock in stocks:
+    # Now use 'stock' directly instead of 'stocks[stock]'
     querystring = {"function":"TIME_SERIES_INTRADAY",
-               "symbol": f"{stocks[stock]}",
+               "symbol": f"{stock}",
                "outputsize":"compact",
                "interval":"5min",
                "datatype":"json"}
@@ -22,7 +22,7 @@ def connect_to_api():
 
       data = response.json()
 
-      logger.info(f"Stocks {stocks[stock]} loaded successfully")
+      logger.info(f"Stocks {stock} loaded successfully")
       
       json_response.append(data)
       
