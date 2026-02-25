@@ -7,28 +7,27 @@ def connect_to_api():
 
   json_response = []
 
-  for stock in stocks:
-    # Now use 'stock' directly instead of 'stocks[stock]'
-    querystring = {"function":"TIME_SERIES_INTRADAY",
-               "symbol": f"{stock}",
-               "outputsize":"compact",
-               "interval":"5min",
-               "datatype":"json"}
+  for stock in stocks:                      # iterate directly over the list
+    querystring = {
+        "function": "TIME_SERIES_INTRADAY",
+        "symbol": stock,
+        "outputsize": "compact",
+        "interval": "5min",
+        "datatype": "json",
+    }
 
     try:
-      response = requests.get(url, headers=headers, params=querystring)
-
-      response.raise_for_status()
-
-      data = response.json()
-
-      logger.info(f"Stocks {stock} loaded successfully")
-      
-      json_response.append(data)
-      
+        response = requests.get(url, headers=headers, params=querystring)
+        response.raise_for_status()
+        data = response.json()
+        logger.info(f"Stock {stock} loaded successfully")
+        json_response.append(data)
     except requests.exceptions.RequestException as e:
-      logger.error(f"Error on stock: {e}")
-      break
+        logger.error(f"Error on stock {stock}: {e}")
+        # either skip the rest of this iteration…
+        # continue
+        # …or stop the loop entirely:
+        break
 
   return json_response  
 
